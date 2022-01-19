@@ -31,4 +31,14 @@ while (i) {
 	i--;
 }
 
-console.table(personalMovieDB);
+if (personalMovieDB.count < 10) {
+	alert('Seen quite a few movies.');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30 ) {
+	alert('You are a classic viewer.');
+} else if (personalMovieDB.count > 30) {
+	alert('You are a movie buff.');
+} else {
+	alert('There was an error.');
+}
+
+console.log(personalMovieDB);
