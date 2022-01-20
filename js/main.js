@@ -18,7 +18,7 @@ let i = 2;
 let filmTitle,
 		filmRate;
 
-while (i) {
+do {
 	filmTitle = prompt('One of the last movies you saw?', '');
 	filmRate = +prompt('How much would you estimate it?', '');
 
@@ -29,7 +29,7 @@ while (i) {
 		personalMovieDB.movies[filmTitle] = filmRate;
 	}
 	i--;
-}
+} while (i);
 
 if (personalMovieDB.count < 10) {
 	alert('Seen quite a few movies.');
