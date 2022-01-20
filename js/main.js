@@ -1,4 +1,4 @@
-const numberOfFilms = +prompt('How many movies have you seen?', '');
+const numberOfFilms = prompt('How many movies have you seen?', '');
 
 const personalMovieDB = {
 	count: numberOfFilms,
@@ -9,18 +9,16 @@ const personalMovieDB = {
 };
 
 // automate user input use while
-let filmTitle,
-		filmRate;
 
-for (let i = 1; i <= 2; i++) {
-	filmTitle = prompt('One of the last movies you saw?', '');
-	filmRate = +prompt('How much would you estimate it?', '');
+for (let i = 0; i < 2; i++) {
+	const filmTitle = prompt('One of the last movies you saw?', '');
+	const filmRate = +prompt('How much would you estimate it?', '');
 
-	if (filmTitle === '' || filmRate === 0 || filmTitle.length > 50 ||
-			filmTitle === null || filmRate === null) {
-		i = 1;
+	if (filmTitle != '' && filmRate != 0 && filmTitle.length <= 50 &&
+			filmTitle != null && filmRate != null) {
+				personalMovieDB.movies[filmTitle] = filmRate;
 	} else {
-		personalMovieDB.movies[filmTitle] = filmRate;
+		i--;
 	}
 }
 
